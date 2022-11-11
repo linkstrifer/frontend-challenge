@@ -31,4 +31,6 @@ This repository is divided in three folders:
 
 - Project: Here you'll find all the designs, assets, states and a style guide with all the colors and fonts.
 - API: This is the REST API that you will use to get the comments, you don't need to touch anything here, this is just for you to have the data.
-- React: This is the React project, you will find the basic stuff to start working on the challenge.
+- UI: This is the React project, you will find the basic stuff to start working on the challenge.
+
+## Run the project
