@@ -17,13 +17,9 @@ You can install any library you need, take in mind that we will check all your c
 
 The challenge is a comment nested section, similar to Facebook comments:
 
-### Desktop Design
-
-![Desktop Design](/project/design/desktop-design.jpg)
-
-### Mobile Design
-
-![Mobile Design](/project/design/mobile-design.jpg)
+| Desktop                                               | Mobile                                              |
+| ----------------------------------------------------- | --------------------------------------------------- |
+| ![Desktop Design](/project/design/desktop-design.jpg) | ![Mobile Design](/project/design/mobile-design.jpg) |
 
 ## Project Structure
 
@@ -33,4 +29,46 @@ This repository is divided in three folders:
 - API: This is the REST API that you will use to get the comments, you don't need to touch anything here, this is just for you to have the data.
 - UI: This is the React project, you will find the basic stuff to start working on the challenge.
 
-## Run the project
+## API Endpoints
+
+- `GET` `/comments`: This endpoint will return all the comments.
+- `POST` `/comment`: This endpoint will create a new comment.
+- `POST` `/comment/:id/reply`: This endpoint will create a new reply for a comment.
+- `DELETE`: `/comment/:id`: This endpoint will delete a comment.
+
+### Comment payload
+
+```ts
+type CommentPayload = {
+  content: string;
+  username: string;
+};
+```
+
+We will generate the user avatar images for you, so don't worry about it.
+
+### Responses
+
+The `/comment` and `/comment/:id/reply` endpoints will return the new comment created, in the case of the `reply`, it will return the replied comment with all the replies.
+
+Here is the full comment response type:
+
+```ts
+type Comment = {
+  id: string;
+  content: string;
+  createdAt: number;
+  score: number;
+  user: {
+    avatar: string;
+    username: string;
+  };
+  replies?: Comment[];
+};
+```
+
+\*The `createdAt` is a timestamp in milliseconds.
+
+For the `GET` `/comments` endpoint, you will get an array of comments, the response type is the same as the `Comment` type.
+
+`DELETE` `/comment/:id` will return a 204 status code.
