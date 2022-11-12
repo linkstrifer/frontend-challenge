@@ -72,3 +72,11 @@ type Comment = {
 For the `GET` `/comments` endpoint, you will get an array of comments, the response type is the same as the `Comment` type.
 
 `DELETE` `/comment/:id` will return a 204 status code.
+
+## How to start
+
+- Clone this repository.
+- Install the dependencies for the API and the UI.
+- Start the API using `npm run start` inside the `api` folder.
+- Start the UI using `npm run start` inside the `ui` folder.
+- If you add tests, you can run the tests using `npm run test` inside the `ui` folder.
