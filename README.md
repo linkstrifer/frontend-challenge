@@ -21,6 +21,13 @@ The challenge is a comment nested section, similar to Facebook comments:
 | ----------------------------------------------------- | --------------------------------------------------- |
 | ![Desktop Design](/project/design/desktop-design.jpg) | ![Mobile Design](/project/design/mobile-design.jpg) |
 
+The user should be able to:
+
+- Read comments
+- Create a comment (without auth, just send an username)
+- Reply to a comment, only one level deep of comments, you can't reply yo a reply
+- Delete a comment
+
 ## Project Structure
 
 This repository is divided in three folders:
